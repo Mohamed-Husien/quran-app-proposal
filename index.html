@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وثيقة العرض الفني الرسمي | تطبيق ومنصة القرآن الكريم الرقمية (MVP)</title>
+  
+  <!-- Fonts: Cairo & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .font-latin {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* BiDi Isolation for Phone Numbers and LTR Code */
+    .bidi-isolate, bdi, [dir="ltr"] {
+      direction: ltr !important;
+      unicode-bidi: isolate !important;
+      display: inline-block !important;
+      text-align: left !important;
+    }
+
+    /* Uncopyable and Protected Content */
+    *, html, body {
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+    }
+
+    /* Clean Word Paper Container */
+    .word-sheet {
+      background: #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Print settings for exact Word/PDF export */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .word-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="py-6 sm:py-12 px-3 sm:px-6 select-none" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" ondragstart="return false;">
+
+  <!-- Global Fixed Watermark (Always visibly centered across all pages and sections while scrolling) -->
+  <div class="fixed inset-0 flex items-center justify-center pointer-events-none select-none z-30">
+    <img src="assets/logo.jpg" alt="Watermark" class="w-[340px] h-[340px] sm:w-[500px] sm:h-[500px] object-contain opacity-[0.065] contrast-125">
+  </div>
+
+  <!-- Floating Action Bar (Top Left) -->
+  <div class="fixed top-4 left-4 z-50 flex items-center gap-2 no-print">
+    <a href="https://wa.me/201275566392?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85.%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D9%88%D8%AB%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%81%D9%86%D9%8A%20%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A8%D8%AF%D8%A1%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0." 
+       target="_blank"
+       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-lg shadow-md transition">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span>محادثة واتساب مباشرة</span>
+    </a>
+  </div>
+
+  <!-- Document Paper Container (A4 / Corporate Style) -->
+  <main class="word-sheet relative overflow-hidden max-w-4xl mx-auto p-6 sm:p-14 rounded-2xl space-y-10">
+
+    <!-- Document Header / Letterhead -->
+    <header class="relative z-10 border-b-2 border-slate-900 pb-6 space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <img src="assets/logo.jpg" alt="Logo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl shadow-sm border border-slate-200 object-cover shrink-0">
+          <div>
+            <div class="text-xs uppercase font-extrabold tracking-wider text-emerald-700">وثيقة عرض فني وهندسي رسمي</div>
+            <h1 class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 mt-0.5">
+              تطبيق ومنصة القرآن الكريم والتفسير الميسر (MVP)
+            </h1>
+            <div class="text-xs sm:text-sm font-medium text-slate-600 mt-1">تطبيق الموبايل (Android + iOS) عبر Flutter + جاهزية نسخة الويب التفاعلية (Web App) أوفلاين 100%</div>
+          </div>
+        </div>
+        <div class="text-right text-xs text-slate-600 space-y-1.5 shrink-0 bg-slate-50 sm:bg-transparent p-3 sm:p-0 rounded-lg border sm:border-0 border-slate-200">
+          <div><span class="text-slate-500 font-medium">رقم المرجع:</span> <span class="font-latin text-slate-900 font-bold" dir="ltr">QRN-PRP-2026-01</span></div>
+          <div><span class="text-slate-500 font-medium">تاريخ الإصدار:</span> <span class="text-slate-900 font-semibold">11 نوفمبر 2026</span></div>
+          <div><span class="text-slate-500 font-medium">حالة العرض:</span> <span class="text-emerald-700 font-bold">معتمد وصالح لمدة 14 يوماً</span></div>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
+        <div><strong>مُقدّم العرض:</strong> م. محمد حسين (استشاري حلول البرمجيات وتطبيقات الموبايل — Flutter Specialist)</div>
+        <div><strong>رقم الواتساب الرسمي:</strong> <bdi dir="ltr" class="bidi-isolate font-latin text-slate-900 font-bold inline-block">+20 127 556 6392</bdi></div>
+      </div>
+    </header>
+
+    <!-- Unit 1: Executive Summary & Project Purpose -->
+    <section class="relative z-10 space-y-4">
+      <div class="flex items-center gap-2 text-slate-900 font-bold text-lg border-r-4 border-emerald-600 pr-3">
+        <span>البند 1: ملخص الرؤية والهدف الأسمى للمشروع</span>
+      </div>
+      <p class="text-sm text-slate-700 leading-relaxed text-justify">
+        يهدف هذا المشروع إلى بناء تطبيق ومنصة رقمية عصرية ميسرة لقراءة وتدبر القرآن الكريم، صُممت خصيصاً لتمنح القارئ تجربة روحانية هادئة، فائقة السرعة، وخالية تماماً من المشتتات والإعلانات. تعتمد المنظومة على تقنية <strong>Flutter</strong> المتطورة لإنتاج تطبيق عالي الأداء يعمل بكفاءة متطابقة على أجهزة <strong>Android و iOS</strong> مع جاهزية كاملة ليعمل كـ <strong>Web App تفاعلي</strong>، مع استقلالية تامة عن الاتصال بالإنترنت (Offline 100%).
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-800">
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span><strong>سلامة النص القرآني:</strong> الاعتماد الحصري على خطوط ورسم مجمع الملك فهد لطباعة المصحف الشريف لمنع أي خطأ إملائي أو مطبعي.</span>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span><strong>عمل كامل بدون إنترنت (Offline 100%):</strong> تضمين النص والتفسير الميسر داخل قاعدة بيانات محلية مدمجة لاستجابة لحظية 0 ثانية.</span>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span><strong>الحفظ التلقائي الذكي:</strong> استئناف القراءة فوراً من آخر سورة وآية توقف عندها القارئ دون الحاجة لوضع علامة يدوية.</span>
+        </div>
+        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span><strong>التفسير الميسر بضغطة زر:</strong> نافذة منسدلة أنيقة (BottomSheet) تعرض تفسير الآية فوراً دون مغادرة صفحة القراءة.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unit 2: Functional Scope & Screen Breakdown -->
+    <section class="relative z-10 space-y-4">
+      <div class="flex items-center gap-2 text-slate-900 font-bold text-lg border-r-4 border-emerald-600 pr-3">
+        <span>البند 2: تفكيك الشاشات والمواصفات الوظيفية المعتمدة (MVP)</span>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        
+        <!-- Screen 1: Splash & Last Read -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="bookmark-check" class="w-4 h-4 text-emerald-600"></i>
+              أولاً: شاشة البداية واستئناف القراءة (Splash & Last Read Screen)
+            </span>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">حفظ محلي فوري</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            ظهور واجهة افتتاحية هادئة وسريعة تتحقق تلقائياً من الذاكرة المحلية للجهاز (<span class="font-latin font-bold">Local Storage</span>):
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-xs text-slate-700 pr-2">
+            <li><strong>في حال وجود قراءة سابقة:</strong> يظهر زر مباشر بارز «متابعة القراءة من: سورة [اسم السورة] - آية [رقم الآية]»، مع زر جانبي للانتقال للفهرس العام.</li>
+            <li><strong>في أول فتح للتطبيق:</strong> التوجيه التلقائي والسلس إلى شاشة الفهرس لاختيار السورة.</li>
+          </ul>
+        </div>
+
+        <!-- Screen 2: Index Screen -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="list-ordered" class="w-4 h-4 text-emerald-600"></i>
+              ثانياً: شاشة الفهرس الشامل والبحث السريع (Index & Search Screen)
+            </span>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">تصنيف ثلاثي</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            فهرسة مرنة وسريعة تتيح للمستخدم الوصول المباشر عبر 3 تبويبات منظمة:
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-xs text-slate-700 pr-2">
+            <li><strong>تبويب السور:</strong> عرض أسماء الـ 114 سورة مع بياناتها (مكية/مدنية، عدد الآيات، رقم الصفحة).</li>
+            <li><strong>تبويب الأجزاء والأحزاب:</strong> تصفح الأجزاء الثلاثين مع أرباع وأحزاب القرآن.</li>
+            <li><strong>تبويب الصفحات:</strong> الانتقال السريع بالأرقام لصفحات المصحف الشريف (1 إلى 604).</li>
+            <li><strong>شريط بحث فوري تفاعلي:</strong> تصفية وبحث لحظي عن السور بالاسم أو الرقم بأقل من جزأين من الثانية.</li>
+          </ul>
+        </div>
+
+        <!-- Screen 3: Reading & Instant Tafseer -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-emerald-600"></i>
+              ثالثاً: شاشة القراءة بالرسم العثماني والتفسير الفوري (Reading & Tafseer View)
+            </span>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">الرسم العثماني الأصيل</span>
+          </div>
+          <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-700 pr-2">
+            <li><strong>عرض النص القرآني:</strong> خط الرسم العثماني النقي المعتمد من مجمع الملك فهد، مع وضوح تام لعلامات الوقف والتشكيل وضبط تباعد الأسطر لراحة العين.</li>
+            <li><strong>التفسير الميسر المنبثق (BottomSheet):</strong> بمجرد النقر على أي آية، ترتفع نافذة أنيقة من أسفل الشاشة تعرض نص الآية وتفسيرها المعتمد، وتغلق بسلاسة بالسحب دون قطع تركيز القارئ.</li>
+            <li><strong>الحفظ التلقائي غير المحسوس (Background Auto-Save):</strong> رصد وتحديث موضع التوقف تلقائياً بمجرد تقليب الصفحات أو غلق التطبيق.</li>
+            <li><strong>الوضع الليلي والراحة البصرية (Dark Mode):</strong> تبديل سلس بين الوضع النهاري ذو الخلفية الورقية المريحة والوضع الليلي المانع لإجهاد العين أثناء القراءة ليلاً.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Unit 3: Engineering Architecture & Technical Trade-offs -->
+    <section class="relative z-10 space-y-4">
+      <div class="flex items-center gap-2 text-slate-900 font-bold text-lg border-r-4 border-emerald-600 pr-3">
+        <span>البند 3: المعمارية الهندسية ومقارنة بدائل التخزين والأداء</span>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+        لضمان خفة التطبيق وصفر تكاليف تشغيلية شهرية، قمنا بمقارنة ومفاضلة الخيارات التقنية الخاصة بمصدر النص والتخزين المحلي:
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-right text-xs border border-slate-200 rounded-lg overflow-hidden">
+          <thead class="bg-slate-100 text-slate-900 font-bold">
+            <tr>
+              <th class="p-2.5 border-b border-slate-200">الخيار التقني</th>
+              <th class="p-2.5 border-b border-slate-200">الاشتراك الشهري</th>
+              <th class="p-2.5 border-b border-slate-200">نقاط القوة والمزايا</th>
+              <th class="p-2.5 border-b border-slate-200">نقاط القصور والمخاطر</th>
+              <th class="p-2.5 border-b border-slate-200 text-center">التقييم الهندسي</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-emerald-50/50">
+              <td class="p-2.5 font-bold text-emerald-950">قاعدة بيانات محلية مدمجة (SQLite / Pre-indexed JSON)</td>
+              <td class="p-2.5 font-latin font-bold text-emerald-700">0$ (مجاناً مدى الحياة)</td>
+              <td class="p-2.5 text-slate-700">سرعة استجابة 0ms، عمل كامل أوفلاين 100% بدون إنترنت، أمان تام واستقلالية.</td>
+              <td class="p-2.5 text-slate-500">حجم أولي بسيط يضاف للتطبيق (أقل من 15 ميجابايت).</td>
+              <td class="p-2.5 text-center font-bold text-emerald-700">⭐ الموصى به للمشروع</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-slate-900">استدعاء الـ APIs السحابية اللحظية (Cloud APIs)</td>
+              <td class="p-2.5 font-latin text-slate-600">0$ بالبداية (ثم رسوم استهلاك)</td>
+              <td class="p-2.5 text-slate-700">حجم تحميل أولي أصغر للتطبيق من المتجر.</td>
+              <td class="p-2.5 text-rose-700">يتوقف التطبيق فوراً عند انقطاع الإنترنت، وبطء عند تقليب الآيات انتظاراً للشبكة.</td>
+              <td class="p-2.5 text-center text-slate-400">غير مرشح لتطبيقات القرآن</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold text-slate-900">خطوط مجمع الملك فهد الرقمية (Uthmani Fonts)</td>
+              <td class="p-2.5 font-latin font-bold text-emerald-700">0$ (وقف معتمد)</td>
+              <td class="p-2.5 text-slate-700">رسم عثماني أصيل معتمد، ضبط علامات التجويد والوقف بدقة متطابقة مع المصحف الورقي.</td>
+              <td class="p-2.5 text-slate-500">تتطلب مهارة خاصة لضبط التشكيل والـ Glyphs داخل إطار Flutter.</td>
+              <td class="p-2.5 text-center font-bold text-emerald-700">⭐ خيارنا المعتمد</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Unit 4: Implementation Tracks & Delivery Scenarios (NO PRICES MENTIONED) -->
+    <section class="relative z-10 space-y-4">
+      <div class="flex items-center gap-2 text-slate-900 font-bold text-lg border-r-4 border-emerald-600 pr-3">
+        <span>البند 4: مسارات التنفيذ والتسليم الفنية المقترحة</span>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+        لإتاحة المرونة الكاملة أمام الإدارة، نقدم 3 مسارات فنية لتطوير المنظومة وفقاً للأولويات المطلوبة:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Track 1: Core Mobile MVP -->
+        <div class="p-5 bg-white rounded-xl border-2 border-slate-200 flex flex-col justify-between space-y-4 hover:border-emerald-500 transition">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-500 uppercase">المسار الأول</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">تطبيق الموبايل</span>
+            </div>
+            <h4 class="text-lg font-black text-slate-900">مسار الـ MVP الأساسي السريع</h4>
+            <p class="text-xs text-slate-600">تنفيذ كامل متطلبات الوثيقة الرسمية بدقة على نظامي Android و iOS.</p>
+            
+            <div class="py-2.5 border-y border-slate-200 space-y-1 text-xs">
+              <div class="text-emerald-700 font-semibold">التشغيل دون إنترنت: مدعوم 100% أوفلاين</div>
+              <div class="text-blue-700 font-medium">مدة التنفيذ المعتمدة: 10 إلى 12 يوم عمل</div>
+            </div>
+
+            <ul class="space-y-1.5 text-xs text-slate-700">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> تطبيق Flutter لأجهزة Android و iOS</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> النص القرآني بالرسم العثماني المعتمد</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> التفسير الميسر بنافذة BottomSheet تفاعلية</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> فهرس شامل (سور، أجزاء، صفحات) وبحث فوري</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> الحفظ التلقائي الذكي لآخر موضع قراءة</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> دعم الوضع الليلي (Dark Mode) وخيارات الخط</li>
+            </ul>
+          </div>
+          
+          <a href="https://wa.me/201275566392?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85.%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D9%86%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20(%D9%85%D8%B3%D8%A7%D8%B1%20%D8%A7%D9%84%D9%80%20MVP%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9)%20%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85." 
+             target="_blank"
+             class="w-full text-center py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-lg transition">
+            اعتماد مسار الـ MVP الأساسي
+          </a>
+        </div>
+
+        <!-- Track 2: Recommended Hybrid Track (Mobile + Responsive Web App) -->
+        <div class="p-5 bg-white rounded-xl border-2 border-emerald-600 shadow-md flex flex-col justify-between space-y-4 relative">
+          <span class="absolute -top-3 right-4 bg-emerald-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">
+            ⭐ الأكثر تكاملاً وترشيحاً للمشروع
+          </span>
+
+          <div class="space-y-3 pt-1">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-emerald-700 uppercase">المسار الثاني</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800">موبايل + تطبيق ويب</span>
+            </div>
+            <h4 class="text-lg font-black text-slate-900">مسار المنظومة الهجينة (Mobile + Web)</h4>
+            <p class="text-xs text-slate-600">تطبيق الموبايل بالكامل مضافاً إليه نسخة Web App متجاوبة للمتصفحات والكمبيوتر.</p>
+            
+            <div class="py-2.5 border-y border-slate-200 space-y-1 text-xs">
+              <div class="text-emerald-700 font-semibold">منصة ويب + أندرويد + آيفون بكود موحد</div>
+              <div class="text-emerald-700 font-medium">مدة التنفيذ المعتمدة: 12 إلى 15 يوم عمل</div>
+            </div>
+
+            <ul class="space-y-1.5 text-xs text-slate-800">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> كافة مميزات المسار الأول بالكامل</li>
+              <li class="flex items-center gap-1.5 font-bold"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> بناء وتصدير نسخة الويب التفاعلية (Flutter Web)</li>
+              <li class="flex items-center gap-1.5 font-bold"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> استجابة كاملة للشاشات الكبيرة واللابتوب والموبايل</li>
+              <li class="flex items-center gap-1.5 font-bold"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> إمكانية التثبيت كـ PWA على سطح المكتب</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> حفظ موضع القراءة متزامن في متصفح الويب محلياً</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> دعم التصفح بلوحة المفاتيح والأسهم على الكمبيوتر</li>
+            </ul>
+          </div>
+          
+          <a href="https://wa.me/201275566392?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85.%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D9%86%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20(%D9%85%D8%B3%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%A7%D9%84%D9%87%D8%AC%D9%8A%D9%86%D8%A9%20Mobile%20%2B%20Web)%20%D9%88%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0." 
+             target="_blank"
+             class="w-full text-center py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black rounded-lg shadow transition">
+            اعتماد المسار الهجين الموصى به
+          </a>
+        </div>
+
+        <!-- Track 3: Extended System -->
+        <div class="p-5 bg-white rounded-xl border-2 border-slate-200 flex flex-col justify-between space-y-4 hover:border-purple-500 transition">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-500 uppercase">المسار الثالث</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-purple-50 text-purple-700">النسخة الموسعة</span>
+            </div>
+            <h4 class="text-lg font-black text-slate-900">مسار المنظومة الموسعة (مع التلاوات)</h4>
+            <p class="text-xs text-slate-600">إضافة مشغل التلاوات الصوتية لكبار القراء مع علامات المرجعية المتعددة.</p>
+            
+            <div class="py-2.5 border-y border-slate-200 space-y-1 text-xs">
+              <div class="text-purple-700 font-semibold">استماع صوتي + علامات متقدمة</div>
+              <div class="text-blue-700 font-medium">مدة التنفيذ المعتمدة: 18 إلى 21 يوم عمل</div>
+            </div>
+
+            <ul class="space-y-1.5 text-xs text-slate-700">
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> كافة مميزات المسار الهجين بالكامل</li>
+              <li class="flex items-center gap-1.5 font-bold"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> مشغل تلاوات صوتية متزامن مع الآية الحالية</li>
+              <li class="flex items-center gap-1.5 font-bold"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> مكتبة تلاوات لأشهر القراء (الحصري، المنشاوي، العفاسي)</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> علامات مرجعية متعددة وتسمية الختمات</li>
+              <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> إمكانية مشاركة نص وتفسير الآية كصورة أنيقة</li>
+            </ul>
+          </div>
+          
+          <a href="https://wa.me/201275566392?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85.%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D9%86%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%20(%D9%85%D8%B3%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%B3%D8%B9%D8%A9)%20%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85." 
+             target="_blank"
+             class="w-full text-center py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-lg transition">
+            اعتماد مسار المنظومة الموسعة
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Unit 5: Delivery Schedule & Milestones -->
+    <section class="relative z-10 space-y-4">
+      <div class="flex items-center gap-2 text-slate-900 font-bold text-lg border-r-4 border-emerald-600 pr-3">
+        <span>البند 5: مراحل وجدول التسليم الزمني المعتمد (Milestones)</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs sm:text-sm">
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="text-xs font-bold text-emerald-700 font-latin">المرحلة الأولى (3 - 4 أيام)</div>
+          <div class="font-bold text-slate-900">هندسة البيانات والخطوط</div>
+          <p class="text-xs text-slate-600">بناء قاعدة بيانات SQLite المفهرسة، دمج الخطوط العثمانية، وتهيئة معمارية Clean Architecture.</p>
+        </div>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="text-xs font-bold text-emerald-700 font-latin">المرحلة الثانية (4 - 5 أيام)</div>
+          <div class="font-bold text-slate-900">واجهات القراءة والتفسير</div>
+          <p class="text-xs text-slate-600">برمجة شاشة المصحف، نافذة التفسير الميسر المنبثقة، وتفعيل نظام الحفظ التلقائي في الذاكرة.</p>
+        </div>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="text-xs font-bold text-emerald-700 font-latin">المرحلة الثالثة (3 - 4 أيام)</div>
+          <div class="font-bold text-slate-900">الفهرس والوضع الليلي والويب</div>
+          <p class="text-xs text-slate-600">برمجة الفهرس الثلاثي وشريط البحث اللحظي، ضبط الوضع الليلي، وبناء نسخة الويب التفاعلية.</p>
+        </div>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="text-xs font-bold text-emerald-700 font-latin">المرحلة الرابعة (2 - 3 أيام)</div>
+          <div class="font-bold text-slate-900">التدقيق والتسليم النهائي</div>
+          <p class="text-xs text-slate-600">مراجعة مطابقة النص القرآني، اختبار الأداء على أجهزة متعددة، وتسليم السورس كود والتوثيق كاملاً.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unit 6: Technical Guarantees & Contractual Commitments -->
+    <section class="relative z-10 space-y-4">
+      <div class="flex items-center gap-2 text-slate-900 font-bold text-lg border-r-4 border-emerald-600 pr-3">
+        <span>البند 6: الضمانات الهندسية والشروط التعاقدية</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-800">
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="font-bold text-slate-900 flex items-center gap-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+            <span>ملكية السورس كود 100%</span>
+          </div>
+          <p class="text-xs text-slate-600">تسليم الشفرة المصدرية كاملة ومنظمة مع توثيق كود احترافي (Clean Code & Bloc)، وبدون أي حقوق احتكارية.</p>
+        </div>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="font-bold text-slate-900 flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600"></i>
+            <span>خلو تام من الإعلانات</span>
+          </div>
+          <p class="text-xs text-slate-600">التزام مطلق بأن تكون المنظومة نقية وخالية تماماً من أي أكواد إعلانات أو نوافذ منبثقة تصون قدسية المصحف.</p>
+        </div>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="font-bold text-slate-900 flex items-center gap-1.5">
+            <i data-lucide="clock" class="w-4 h-4 text-emerald-600"></i>
+            <span>ضمان مجاني لمدة 30 يوماً</span>
+          </div>
+          <p class="text-xs text-slate-600">فترة ضمان ودعم فني مجاني بعد التسليم لتقديم أي دعم تشغيلي والتأكد من الاستقرار التام.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Sign-off / Footer -->
+    <footer class="relative z-10 pt-8 border-t-2 border-slate-900 space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.jpg" alt="Mohamed Hussien Logo" class="w-12 h-12 rounded-xl border border-slate-200 object-cover shrink-0 shadow-sm">
+          <div>
+            <div class="text-xs text-slate-500">الاستشاري المسؤول:</div>
+            <div class="text-base font-bold text-slate-900 mt-0.5">م. محمد حسين</div>
+            <div class="text-xs text-slate-600">استشاري ومطور حلول برمجية وتطبيقات موبايل (Flutter Specialist)</div>
+            <div class="text-xs text-slate-600 mt-1"><span>رقم الواتساب:</span> <bdi dir="ltr" class="bidi-isolate font-latin font-bold text-slate-900 inline-block">+20 127 556 6392</bdi></div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 no-print">
+          <a href="https://wa.me/201275566392?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85.%20%D9%85%D8%AD%D9%85%D8%AF%D8%8C%20%D8%A7%D8%B7%D9%84%D8%B9%D8%AA%20%D8%B9%D9%84%D9%89%20%D9%88%D8%AB%D9%8A%D9%82%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D9%81%D9%86%D9%8A%20%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84." 
+             target="_blank"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-5 py-2.5 rounded-lg transition shadow-sm">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>تأكيد والبدء عبر واتساب</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center text-[11px] text-slate-400 pt-3 border-t border-slate-100">
+        وثيقة فنية معتمدة © 2026 | منظومة وتطبيق القرآن الكريم والتفسير الميسر (MVP)
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    // Prevent Copying & Inspection
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('cut', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Prevent Ctrl+C, Ctrl+A, Ctrl+U, Ctrl+S, Ctrl+P, Ctrl+X
+      if ((e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'a', 'x', 'p'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+        return false;
+      }
+      // Prevent F12 and Ctrl+Shift+I / J / C
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+
+</body>
+</html>
